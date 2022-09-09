@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, {useState} from 'react'
+import { QuestionProps } from './App.types';
+import data from './data';
+import Question from './Question';
 
-function App() {
+const App = () => {
+  const [questions, setQuestions] = useState<QuestionProps[]>(data); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>    
+      <div className="container">
+        <h3>questions and answers about login</h3> 
+        <section className="info">
+          {
+            questions.map((question) =>{
+              return <Question key={question.id}  {...question} />
+            })
+          }
+        </section>
+      </div>
+    </main>
   );
 }
 
