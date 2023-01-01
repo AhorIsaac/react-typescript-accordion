@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, FC, ReactElement } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { QuestionProps } from "./App.types";
 
-const Question = ({ title, info }: QuestionProps) => {
+const Question: FC<QuestionProps> = ({
+  title,
+  info,
+}: QuestionProps): ReactElement => {
   const [showInfo, setShowInfo] = useState<boolean>(false);
 
   return (

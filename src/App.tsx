@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {useState} from 'react'
+import React, {useState, FC, ReactElement} from 'react'
 import { QuestionProps } from './App.types';
 import data from './data';
 import Question from './Question';
 
-const App = () => {
+const App : FC = () : ReactElement => {
   const [questions, setQuestions] = useState<QuestionProps[]>(data); 
 
   return (
     <main>    
-      <div className="container">
-        <h3>questions and answers about login</h3> 
+      <div className="container glassmorphism">
+        <h3>interview questions and answers.</h3> 
         <section className="info">
           {
             questions.map((question) =>{
